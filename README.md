@@ -1,1 +1,2 @@
 # Merjenje-temperature-in-vlage-DHT22
+Namen tega projekta je razvoj preprostega in učinkovitega sistema za merjenje temperature in vlažnosti zraka z uporabo senzorja DHT22, priklopljenega na Arduino mikrokontroler. Merjeni podatki se v realnem času prikazujejo na LCD zaslonu z I2C komunikacijo. Sistem omogoča osnovno spremljanje okoljskih pogojev v prostoru ali okolici, zato je primeren za hobi uporabo, osnovno avtomatizacijo prostora, merjenje klime v rastlinjakih ali kot uvod v IoT (Internet stvari).
