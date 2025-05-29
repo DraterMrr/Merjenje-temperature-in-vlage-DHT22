@@ -67,5 +67,25 @@ LED:
 
 •	Katoda → GND
 
-dht22.png
+4. Uporabljene knjižnice 
+
+ 
+
+Za pravilno delovanje kode je treba v Arduino IDE vključiti naslednje knjižnice: 
+
+DHT sensor library – Omogoča komunikacijo z DHT senzorjem. Avtor: Adafruit. 
+
+Adafruit Unified Sensor – Niz knjižnic, ki podpirajo različne senzorje in poenoteno komunikacijo. 
+
+LiquidCrystal_I2C – Omogoča komunikacijo z LCD zaslonom preko I2C vodila. 
+
+Knjižnice namestimo tako: 
+
+V Arduino IDE kliknemo Sketch → Include Library → Manage Libraries... 
+
+V iskalno polje vpišemo ime knjižnice (npr. “DHT sensor”) in kliknemo Install 
+
+Postopek ponovimo za vse tri potrebne knjižnice 
+
+Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za senzor in zaslon. 
 
