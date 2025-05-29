@@ -13,27 +13,50 @@ Za izdelavo tega projekta potrebujemo naslednje elektronske komponente:
 Te komponente so dostopne v večini trgovin z elektroniko in jih pogosto najdemo tudi v Arduino kompletih za začetnike. Priporočljivo je tudi imeti računalnik z nameščenim Arduino IDE programom za pisanje in nalaganje kode.
 Povezava vezja (shema priklopa)
 DHT22 senzor:
+
 •	VCC → 5V na Arduino plošči (zagotavlja napajanje)
+
 •	GND → GND na Arduino (ozemljitev)
+
 •	DATA → Digitalni vhod 8 (za komunikacijo z mikrokontrolerjem)
 LCD 16x2 :
+
 •	VSS → GND na Arduino 
+
 •	VDD → 5V na Arduino 
+
 •	VO → Srednji pin potenciometra (za nastavitev kontrasta LCD-ja)
+
 •	RS → Digitalni pin 7 na Arduino (Register Select)
+
 •	RW → GND na Arduino (stalno pisanje na LCD)
+
 •	E → Digitalni pin 6 na Arduino (Enable – sprožitev prenosa)
+
 •	D4 → Digitalni pin  5 na Arduino
+
 •	D5 → Digitalni pin 4 na Arduino 
+
 •	D6 → Digitalni pin 3 na Arduino 
+
 •	D7 → Digitalni pin 2 na Arduino 
+
 •	A (LED+) → 5V na Arduino 
+
 •	K (LED−) → GND na Arduino
+
+
 STIKALO: 
+
 •	Srednja noga stikala → pin 13 na Arduino (podatkovna linija)
+
 •	Prva noga stikala → GND na Arduino (ozemljivetv)
+
+
 LED: 
+
 •	Anoda → pin 12 na Arduino (podatkovna linija)
+
 •	Katoda → GND
 
 
