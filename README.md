@@ -89,3 +89,8 @@ Postopek ponovimo za vse tri potrebne knjižnice
 
 Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za senzor in zaslon. 
 
+ 
+5. Izvorna koda 
+
+Tu je koda za delovanje sistema: 
+
