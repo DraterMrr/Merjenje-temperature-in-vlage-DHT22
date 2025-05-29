@@ -36,3 +36,5 @@ LED:
 •	Anoda → pin 12 na Arduino (podatkovna linija)
 •	Katoda → GND
 
+
+
