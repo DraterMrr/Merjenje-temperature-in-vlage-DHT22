@@ -67,5 +67,5 @@ LED:
 
 •	Katoda → GND
 
-
+dht22.png
 
