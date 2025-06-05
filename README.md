@@ -22,7 +22,6 @@ Za izdelavo tega projekta potrebujemo naslednje elektronske komponente:
 
 7.	Povezovalne žice (jumper kabli) – Za električne povezave med komponentami.
 
-Te komponente so dostopne v večini trgovin z elektroniko in jih pogosto najdemo tudi v Arduino kompletih za začetnike. Priporočljivo je tudi imeti računalnik z nameščenim Arduino IDE programom za pisanje in nalaganje kode.
 
 Povezava vezja (shema priklopa)
 
