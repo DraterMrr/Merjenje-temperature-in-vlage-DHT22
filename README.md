@@ -94,5 +94,5 @@ Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za se
 
 Tu je koda za delovanje sistema: 
 
-"C:\Users\U207.05\Documents\Arduino\dht22prj\dht22prj.ino"
+
 
