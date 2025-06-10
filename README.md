@@ -98,7 +98,10 @@ Tu je koda za delovanje sistema:
 
 
 Opis delovanja sistema
+
+
 Ko je sistem napajan, se na LCD zaslonu prikaže začetno sporočilo "Naprava OFF", ki uporabniku jasno pove, da merilni sistem še ni aktiven. V tem stanju sveti rdeča LED, kar vizualno potrdi, da je naprava izklopljena. Na drugi vrstici LCD-ja utripajoče besedilo "Preklopi stikalo" opozarja uporabnika, da lahko s pritiskom na stikalo napravo aktivira.
+
 
 Ko uporabnik pritisne stikalo (na digitalnem pinu 13), sistem zazna preklop in preide v aktivno stanje. V tem trenutku:
 
@@ -116,7 +119,9 @@ Vrednosti se prikazujejo v realnem času, LCD pa se osvežuje vsakih 250 milisek
 
 Ob ponovnem pritisku na stikalo se naprava izklopi, vrednosti prenehajo s prikazovanjem in sistem se vrne v začetno stanje.
 
- Možne nadgradnje in razširitve
+
+Možne nadgradnje in razširitve
+
 Projekt je zasnovan modularno, kar pomeni, da ga je mogoče preprosto razširiti z dodatnimi funkcionalnostmi:
 
 Zapisovanje podatkov (Data Logging)
