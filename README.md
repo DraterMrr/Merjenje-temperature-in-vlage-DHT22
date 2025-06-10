@@ -95,3 +95,55 @@ Tu je koda za delovanje sistema:
 
 
 
+
+
+Opis delovanja sistema
+Ko je sistem napajan, se na LCD zaslonu prikaže začetno sporočilo "Naprava OFF", ki uporabniku jasno pove, da merilni sistem še ni aktiven. V tem stanju sveti rdeča LED, kar vizualno potrdi, da je naprava izklopljena. Na drugi vrstici LCD-ja utripajoče besedilo "Preklopi stikalo" opozarja uporabnika, da lahko s pritiskom na stikalo napravo aktivira.
+
+Ko uporabnik pritisne stikalo (na digitalnem pinu 13), sistem zazna preklop in preide v aktivno stanje. V tem trenutku:
+
+Modra LED se prižge, kar pomeni, da je sistem aktiven.
+
+Rdeča LED ugasne.
+
+Na LCD zaslonu se za 1 sekundo izpiše "Naprava ON".
+
+Nato sistem samodejno začne prikazovati merjene vrednosti temperature in vlage, ki jih zazna senzor DHT22.
+
+Vrednosti se prikazujejo v realnem času, LCD pa se osvežuje vsakih 250 milisekund, medtem ko se meritve s senzorja osvežijo vsakih 2 sekundi, da se prepreči prekomerna obremenitev senzorja.
+
+Če senzor DHT22 ne poda veljavnih vrednosti (zaradi napake, nepravilne povezave ali motenj), sistem na LCD-ju izpiše "Napaka DHT22".
+
+Ob ponovnem pritisku na stikalo se naprava izklopi, vrednosti prenehajo s prikazovanjem in sistem se vrne v začetno stanje.
+
+ Možne nadgradnje in razširitve
+Projekt je zasnovan modularno, kar pomeni, da ga je mogoče preprosto razširiti z dodatnimi funkcionalnostmi:
+
+Zapisovanje podatkov (Data Logging)
+
+Dodajanje SD kartice za shranjevanje meritev v CSV obliki.
+
+Možnost analize podatkov naknadno na računalniku.
+
+Daljinsko spremljanje
+
+Vključitev WiFi modula (npr. ESP8266) za pošiljanje podatkov v oblak.
+
+Vmesnik z mobilno aplikacijo ali spletno nadzorno ploščo.
+
+Alarmni sistem
+
+Dodajanje zvočnega ali vizualnega alarma, če temperatura ali vlaga presežeta določene meje.
+
+Uporaba relejev za vklop prezračevanja ali ogrevanja.
+
+Samodejno vklapljanje
+
+Uporaba senzorja gibanja (PIR) za avtomatski vklop sistema, ko je oseba v prostoru.
+
+Upravljanje z meniji
+
+Razširitev LCD prikaza z menijskim sistemom in več informacijami (npr. maksimalna/minimalna temperatura).
+
+
+
