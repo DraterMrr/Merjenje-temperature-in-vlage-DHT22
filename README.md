@@ -89,7 +89,7 @@ LiquidCrystal_I2C – Omogoča komunikacijo z LCD zaslonom preko I2C vodila.
 Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za senzor in zaslon.
 
 
-Opis delovanja sistema
+5.Opis delovanja sistema
 
 
 Ko je sistem napajan, se na LCD zaslonu prikaže začetno sporočilo "Naprava OFF", ki uporabniku jasno pove, da merilni sistem še ni aktiven. V tem stanju sveti rdeča LED, kar vizualno potrdi, da je naprava izklopljena. Na drugi vrstici LCD-ja utripajoče besedilo "Preklopi stikalo" opozarja uporabnika, da lahko s pritiskom na stikalo napravo aktivira.
