@@ -86,15 +86,7 @@ Adafruit Unified Sensor – Niz knjižnic, ki podpirajo različne senzorje in po
 
 LiquidCrystal_I2C – Omogoča komunikacijo z LCD zaslonom preko I2C vodila. 
 
-Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za senzor in zaslon. 
-
- 
-5. Izvorna koda 
-
-Tu je koda za delovanje sistema: 
-
-
-
+Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za senzor in zaslon.
 
 
 Opis delovanja sistema
@@ -120,35 +112,7 @@ Vrednosti se prikazujejo v realnem času, LCD pa se osvežuje vsakih 250 milisek
 Ob ponovnem pritisku na stikalo se naprava izklopi, vrednosti prenehajo s prikazovanjem in sistem se vrne v začetno stanje.
 
 
-Možne nadgradnje in razširitve
 
-Projekt je zasnovan modularno, kar pomeni, da ga je mogoče preprosto razširiti z dodatnimi funkcionalnostmi:
-
-Zapisovanje podatkov (Data Logging)
-
-Dodajanje SD kartice za shranjevanje meritev v CSV obliki.
-
-Možnost analize podatkov naknadno na računalniku.
-
-Daljinsko spremljanje
-
-Vključitev WiFi modula (npr. ESP8266) za pošiljanje podatkov v oblak.
-
-Vmesnik z mobilno aplikacijo ali spletno nadzorno ploščo.
-
-Alarmni sistem
-
-Dodajanje zvočnega ali vizualnega alarma, če temperatura ali vlaga presežeta določene meje.
-
-Uporaba relejev za vklop prezračevanja ali ogrevanja.
-
-Samodejno vklapljanje
-
-Uporaba senzorja gibanja (PIR) za avtomatski vklop sistema, ko je oseba v prostoru.
-
-Upravljanje z meniji
-
-Razširitev LCD prikaza z menijskim sistemom in več informacijami (npr. maksimalna/minimalna temperatura).
 
 
 
