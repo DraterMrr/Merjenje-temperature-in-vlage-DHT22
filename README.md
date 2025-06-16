@@ -99,8 +99,6 @@ Ko uporabnik pritisne stikalo (na digitalnem pinu 13), sistem zazna preklop in p
 
 Modra LED se prižge, kar pomeni, da je sistem aktiven.
 
-Rdeča LED ugasne.
-
 Na LCD zaslonu se za 1 sekundo izpiše "Naprava ON".
 
 Nato sistem samodejno začne prikazovati merjene vrednosti temperature in vlage, ki jih zazna senzor DHT22.
@@ -110,6 +108,25 @@ Vrednosti se prikazujejo v realnem času, LCD pa se osvežuje vsakih 250 milisek
 Če senzor DHT22 ne poda veljavnih vrednosti (zaradi napake, nepravilne povezave ali motenj), sistem na LCD-ju izpiše "Napaka DHT22".
 
 Ob ponovnem pritisku na stikalo se naprava izklopi, vrednosti prenehajo s prikazovanjem in sistem se vrne v začetno stanje.
+
+KALIBRACIJA:
+
+DHT-22 ima že tovarniško narejeno kalibracijo in vlago samostojno preko programa zapiše v odstotkih (%). Temperaturo pa sva nastavila na stopinje celzija (°C)
+
+DHT-22 ima mejo napake +/- 2% RH in +/- 0,5 °C
+
+Temperatura je že določena, in natančnost merjenja najnega izdelka sva testirala z napravo, ki jo ima doma eden od naju. Ta naprava je TFA DUSTMANN.
+
+MERITVE:
+
+                  TFA DUSTMANN                     m & m technology
+soba 1            49%   23,2°C                     50%       23,2°C        
+soba 2            51%   22,8°C                     51%       22,3°C
+soba 3            48%   23,4°C                     49%       23,5°C
+klet (ogrevana)   53%   20,1°C                     53%       20,0°C
+baraka            63%   30,7°C                     61%       31,1°C
+
+Zgoraj so vse meritve določene po prostorih, kjer so vgrajeni sistemi merilca vlage TFA DUSTMANN, vidimo, da so vse razlike v tolerancah mejah napake senzorja DHT-22. Da sva izmerila sva v vsak prostor položila najno napravo in počakala, da se umeri in sva zapisala končne rezultate.
 
 
 
