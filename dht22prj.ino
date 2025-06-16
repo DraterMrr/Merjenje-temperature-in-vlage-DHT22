@@ -12,16 +12,10 @@ DHT dht(DHTPIN, DHTTYPE);
 // Stikalo
 #define SWITCH_PIN 13
 
-// LED pin (modra)
-#define LED_PIN 12
-
-// rdeča LED
-#define LED_RDECA_PIN 11
+// LED pin
+#define BLUE_LED_PIN 12  // modra LED
 
 bool napravaVklopljena = false;
-bool prikazON = false;
-unsigned long casVklopa = 0;
-const unsigned long prikazONcas = 1000; // 1 s prikaz "Naprava ON"
 
 float temp = NAN;
 float hum = NAN;
@@ -31,20 +25,30 @@ unsigned long prejsnjiCasLCD = 0;
 const unsigned long intervalDHT = 2000;
 const unsigned long intervalLCD = 250;
 
-unsigned long casUtripanja = 0;
-bool utripPrikaz = true;
-const unsigned long intervalUtripanja = 500; // 500 ms
+unsigned long casStanja = 0; // Čas začetka trenutnega stanja (ON ali OFF)
+const unsigned long trajanjePrikaza = 1000; // 1 sekunda za prikaz "Naprava ON" ali "OFF"
+
+unsigned long zadnjiCasUtripLED = 0;
+bool modraLEDgori = false;
+
+// Za utripanje LED ob spremembi stanja z uporabo delay (ker je samo dvakrat)
+void utripniModroLED(int ponovitve, int trajanje = 150) {
+  for (int i = 0; i < ponovitve; i++) {
+    digitalWrite(BLUE_LED_PIN, HIGH);
+    delay(trajanje);
+    digitalWrite(BLUE_LED_PIN, LOW);
+    delay(trajanje);
+  }
+}
 
 void setup() {
   lcd.begin(16, 2);
   dht.begin();
 
   pinMode(SWITCH_PIN, INPUT_PULLUP);
-  pinMode(LED_PIN, OUTPUT);
-  pinMode(LED_RDECA_PIN, OUTPUT); // nova rdeča LED
+  pinMode(BLUE_LED_PIN, OUTPUT);
 
-  digitalWrite(LED_PIN, LOW);
-  digitalWrite(LED_RDECA_PIN, HIGH); // rdeča LED sveti, ker je naprava izklopljena
+  digitalWrite(BLUE_LED_PIN, LOW);
 
   lcd.setCursor(0, 0);
   lcd.print("Naprava OFF");
@@ -55,31 +59,31 @@ void loop() {
   int stanjeStikala = digitalRead(SWITCH_PIN);
   bool trenutnoStanje = (stanjeStikala == LOW);
 
-  // Sprememba stanja stikala
+  // Če se stanje spremeni, izvedemo akcije
   if (trenutnoStanje != napravaVklopljena) {
     napravaVklopljena = trenutnoStanje;
-
-    digitalWrite(LED_PIN, napravaVklopljena ? HIGH : LOW);
-    digitalWrite(LED_RDECA_PIN, napravaVklopljena ? LOW : HIGH); // upravljanje z rdečo LED
+    casStanja = trenutniCas;
 
     if (napravaVklopljena) {
-      prikazON = true;
-      casVklopa = trenutniCas;
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print("Naprava ON");
+      utripniModroLED(2);
+      zadnjiCasUtripLED = trenutniCas;  // za redno utripanje LED kasneje
     } else {
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print("Naprava OFF");
-      casUtripanja = trenutniCas;
-      utripPrikaz = true;
+      utripniModroLED(2);
+      digitalWrite(BLUE_LED_PIN, LOW);
     }
   }
 
-  // Če naprava ni vklopljena, utripaj besedilo v 2. vrstici
+  // Če je naprava OFF - utripaj napis v 2. vrstici
   if (!napravaVklopljena) {
-    if (trenutniCas - casUtripanja >= intervalUtripanja) {
+    static bool utripPrikaz = true;
+    static unsigned long casUtripanja = 0;
+    if (trenutniCas - casUtripanja >= 500) {
       casUtripanja = trenutniCas;
       lcd.setCursor(0, 1);
       if (utripPrikaz) {
@@ -89,22 +93,30 @@ void loop() {
       }
       utripPrikaz = !utripPrikaz;
     }
+    return; // Ne delaj več, ker je OFF
+  }
+
+  // Če je naprava ON in je od spremembe minila manj kot 1 sekunda,
+  // samo prikazujemo "Naprava ON"
+  if (trenutniCas - casStanja < trajanjePrikaza) {
+    // Ne delaj nič drugega, samo počakaj
     return;
   }
 
-  // Po 1 sekundi po vklopu naprave, prikazuj podatke
-  if (prikazON && (trenutniCas - casVklopa >= prikazONcas)) {
-    prikazON = false;
-    lcd.clear();
-    prejsnjiCasDHT = 0;
-    prejsnjiCasLCD = 0;
+  // Po 1s po vklopu začne prikazovati podatke z DHT22
+
+  // Vsakih 5 sekund modra LED zasveti za 0.5 sekunde
+  if (trenutniCas - zadnjiCasUtripLED >= 5000) {
+    digitalWrite(BLUE_LED_PIN, HIGH);
+    modraLEDgori = true;
+    zadnjiCasUtripLED = trenutniCas;
+  }
+  if (modraLEDgori && (trenutniCas - zadnjiCasUtripLED >= 500)) {
+    digitalWrite(BLUE_LED_PIN, LOW);
+    modraLEDgori = false;
   }
 
-  if (prikazON) {
-    return; // še vedno prikazuje "Naprava ON"
-  }
-
-  // Branje senzorja
+  // Branje DHT senzorja vsake 2 sekundi
   if (trenutniCas - prejsnjiCasDHT >= intervalDHT) {
     prejsnjiCasDHT = trenutniCas;
     float t = dht.readTemperature();
@@ -115,16 +127,17 @@ void loop() {
     }
   }
 
-  // Osveži LCD
+  // Osvežitev LCD vsake 250 ms
   if (trenutniCas - prejsnjiCasLCD >= intervalLCD) {
     prejsnjiCasLCD = trenutniCas;
+
     lcd.setCursor(0, 0);
     if (isnan(temp)) {
       lcd.print("Napaka DHT22     ");
     } else {
       lcd.print("Temp: ");
       lcd.print(temp, 1);
-      lcd.print((char)223);
+      lcd.print((char)223); // stopinja znak
       lcd.print("C    ");
     }
 
