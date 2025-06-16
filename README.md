@@ -116,6 +116,7 @@ DHT-22 ima že tovarniško narejeno kalibracijo in vlago samostojno preko progra
 DHT-22 ima mejo napake +/- 2% RH in +/- 0,5 °C
 
 Temperatura je že določena, in natančnost merjenja najnega izdelka sva testirala z napravo, ki jo ima doma eden od naju. Ta naprava je TFA DUSTMANN.
+
 ![image](https://github.com/user-attachments/assets/49e4fa58-6fa5-49ad-afc8-de957803c528)
 
 
