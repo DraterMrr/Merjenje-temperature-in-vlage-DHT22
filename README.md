@@ -93,22 +93,22 @@ Brez teh knjižnic koda ne bo delovala, saj Arduino ne bo prepoznal ukazov za se
 5.Opis delovanja sistema
 
 
-Ko je sistem napajan, se na LCD zaslonu prikaže začetno sporočilo "Naprava OFF", ki uporabniku jasno pove, da merilni sistem še ni aktiven. V tem stanju sveti rdeča LED, kar vizualno potrdi, da je naprava izklopljena. Na drugi vrstici LCD-ja utripajoče besedilo "Preklopi stikalo" opozarja uporabnika, da lahko s pritiskom na stikalo napravo aktivira.
+Ko je sistem napajan, se na LCD zaslonu prikaže začetno sporočilo "Naprava OFF", ki uporabniku jasno pove, da merilni sistem še ni aktiven. V tem stanju sveti modra LED ne utripa kar pomeni, da je naprava izklopljena. Na drugi vrstici LCD-ja utripajoče besedilo "Preklopi stikalo" opozarja uporabnika, da lahko s pritiskom na stikalo napravo aktivira.
 
 
 Ko uporabnik pritisne stikalo (na digitalnem pinu 13), sistem zazna preklop in preide v aktivno stanje. V tem trenutku:
 
-Modra LED se prižge, kar pomeni, da je sistem aktiven.
+Modra LED utripne dvkrat in naprava se prižge prižge
 
 Na LCD zaslonu se za 1 sekundo izpiše "Naprava ON".
 
 Nato sistem samodejno začne prikazovati merjene vrednosti temperature in vlage, ki jih zazna senzor DHT22.
 
-Vrednosti se prikazujejo v realnem času, LCD pa se osvežuje vsakih 250 milisekund, medtem ko se meritve s senzorja osvežijo vsakih 2 sekundi, da se prepreči prekomerna obremenitev senzorja.
+Vrednosti se prikazujejo v realnem času, LED utripne za 0,5 sekunde na vsakih 5 sekund, LCD pa se osvežuje vsakih 250 milisekund, medtem ko se meritve s senzorja osvežijo vsakih 2 sekundi, da se prepreči prekomerna obremenitev senzorja.
 
 Če senzor DHT22 ne poda veljavnih vrednosti (zaradi napake, nepravilne povezave ali motenj), sistem na LCD-ju izpiše "Napaka DHT22".
 
-Ob ponovnem pritisku na stikalo se naprava izklopi, vrednosti prenehajo s prikazovanjem in sistem se vrne v začetno stanje.
+Ob ponovnem pritisku na stikalo se naprava izklopi, modra LED ponovno utripne dvakrat, vrednosti prenehajo s prikazovanjem in sistem se vrne v začetno stanje.
 
 KALIBRACIJA:
 
