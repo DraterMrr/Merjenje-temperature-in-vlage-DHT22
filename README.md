@@ -119,7 +119,7 @@ Temperatura je že določena, in natančnost merjenja najnega izdelka sva testir
 
 MERITVE:
 
-                  TFA DUSTMANN                     m & m technology
+                             TFA DUSTMANN                     m & m technology
 soba 1                       49%   23,2°C                                  50%       23,2°C  
  
 soba 2                       51%   22,8°C                                  51%       22,3°C
