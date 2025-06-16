@@ -120,13 +120,19 @@ Temperatura je že določena, in natančnost merjenja najnega izdelka sva testir
 MERITVE:
 
                   TFA DUSTMANN                     m & m technology
-soba 1            49%   23,2°C                     50%       23,2°C        
+soba 1            49%   23,2°C                     50%       23,2°C  
+
 soba 2            51%   22,8°C                     51%       22,3°C
+
 soba 3            48%   23,4°C                     49%       23,5°C
+
 klet (ogrevana)   53%   20,1°C                     53%       20,0°C
+
 baraka            63%   30,7°C                     61%       31,1°C
 
 Zgoraj so vse meritve določene po prostorih, kjer so vgrajeni sistemi merilca vlage TFA DUSTMANN, vidimo, da so vse razlike v tolerancah mejah napake senzorja DHT-22. Da sva izmerila sva v vsak prostor položila najno napravo in počakala, da se umeri in sva zapisala končne rezultate.
+
+
 
 
 
