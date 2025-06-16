@@ -71,7 +71,7 @@ LED:
 •	Anoda → pin 12 na Arduino (podatkovna linija)
 
 •	Katoda → GND
-![dht22ee](https://github.com/user-attachments/assets/e51236a1-dfbb-4972-bbf9-433419e6d3ff)
+![Screenshot 2025-06-17 001430](https://github.com/user-attachments/assets/6c1ac08f-4ea6-417e-8081-bb856de0323b)
 
 
 4. Uporabljene knjižnice 
