@@ -16,7 +16,7 @@ Za izdelavo tega projekta potrebujemo naslednje elektronske komponente:
 
 4. Perf Board za povezovanje komponent
 
-5.	LED ena modra, ena rdeča
+5.	LED ena modra,
 
 6.	Stikalo, za preklop in izklop naprave
 
