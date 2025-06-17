@@ -125,7 +125,7 @@ Zgoraj so vse meritve določene po prostorih, kjer so vgrajeni sistemi merilca v
 
 
 
-https://github.com/user-attachments/assets/6be9d51f-b58d-47a0-9fa5-b5b2bc2d0731
+
 
 
 
