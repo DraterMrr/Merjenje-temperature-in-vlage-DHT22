@@ -124,9 +124,13 @@ Temperatura je že določena, in natančnost merjenja najnega izdelka sva testir
 Zgoraj so vse meritve določene po prostorih, kjer so vgrajeni sistemi merilca vlage TFA DUSTMANN, vidimo, da so vse razlike v tolerancah mejah napake senzorja DHT-22. Da sva izmerila sva v vsak prostor položila najno napravo in počakala, da se umeri in sva zapisala končne rezultate.
 
 
-copy_35A43B9C-5E20-4AF3-BAB0-ED4F9FFC0392.mov
 
 
+
+
+
+
+https://github.com/user-attachments/assets/257e2ffc-ce99-42cc-b91c-e365948f842a
 
 
 
